@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 
 public abstract class Location {
-    private ArrayList choices;
+    private ArrayList<Choice> currentChoices;
     private String currentDialog;
+    private ArrayList<Choice> choicesTaken;
 
     public Location () {
 
     }
 
-    public abstract String getDialog();
+    public abstract String getCurrentDialog();
 
     public String sendTerminate() {
         return "terminate";
