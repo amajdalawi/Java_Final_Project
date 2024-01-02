@@ -14,5 +14,9 @@ public class GameManager {
         return this.gameStatus;
     }
 
+    public void run() {
+
+    }
+
 
 }
