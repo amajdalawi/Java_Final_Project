@@ -15,7 +15,7 @@ public abstract class Location {
         return "terminate";
     }
 
-    public abstract ArrayList<String> getChoices();
+    public abstract ArrayList<Choice> getCurrentChoices();
 
 
 }

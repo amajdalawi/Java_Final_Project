@@ -21,6 +21,10 @@ public class FirstLocation extends Location {
         return this.currentDialogue;
     }
 
+    @Override
+    public ArrayList<Choice> getCurrentChoices() {
+        return this.currentChoices;
+    }
 
 
 }
