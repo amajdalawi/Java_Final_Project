@@ -6,6 +6,8 @@ public class GameManager {
     private boolean gameStatus;
     private TextPrinter tp;
     public GameManager() {
+        Player p = new Player();
+
 
 
     }
