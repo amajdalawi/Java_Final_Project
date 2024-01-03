@@ -13,7 +13,7 @@ public class Inventory {
 
     public boolean checkIfDone(){
         return this.Items.contains("Annex 100")
-                && this.Items.contains("Passport")
+                && this.Items.contains("Birth Certificate")
                 && this.Items.contains("Health Insurance")
                 && this.Items.contains("Registration Certificate");
     }

@@ -36,11 +36,13 @@ public abstract class Location {
     }
 
     public void removeFromChoices(Choice c) {
-        for (Choice internalchoice : this.currentChoices) {
-            if (c.textRep.equals(internalchoice.textRep)) {
+        for (Choice internalchoice : this.getCurrentChoices()) {
+            if (c.toString().equals(internalchoice.toString())) {
                 this.currentChoices.remove(internalchoice);
                 break;
             }
         }
     }
+
+    public abstract void getChoices();
 }

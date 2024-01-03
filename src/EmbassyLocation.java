@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class EmbassyLocation extends  Location {
 
 
+    public EmbassyLocation() {
+        this.locationName = "Embassy";
+    }
+
     @Override
     public String getCurrentDialog() {
         return null;
@@ -21,5 +25,10 @@ public class EmbassyLocation extends  Location {
     @Override
     public ArrayList<Choice> getCurrentChoices() {
         return null;
+    }
+
+    @Override
+    public void getChoices() {
+
     }
 }

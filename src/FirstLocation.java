@@ -49,5 +49,10 @@ public class FirstLocation extends Location {
 
     }
 
+    @Override
+    public void getChoices() {
+
+    }
+
 
 }

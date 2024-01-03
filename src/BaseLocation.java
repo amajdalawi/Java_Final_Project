@@ -47,12 +47,18 @@ public class BaseLocation extends Location {
 
     public Choice getChoiceSelected(String textRep) {
         for (Choice c: this.getCurrentChoices()){
-            if (c.toString().equals(textRep)) {
+            if (c.toString().toLowerCase().equals(textRep)) {
                 return c;
             }
         }
         return null;
 
+    }
+
+    public void getChoices() {
+        for (Choice c: this.currentChoices) {
+            System.out.println(c.textRep);
+        }
     }
 
 }
