@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * Class that controls the game and holds within its lifetime/scope all the
+ * locations, player and choices that define the game.
+ */
 public class GameManager {
     private int days;
     private ArrayList<Location> listOfLocations;
@@ -14,6 +18,11 @@ public class GameManager {
      THLocation thl;
      BaseLocation bl;
     private TextPrinter tp;
+
+    /**
+     * Constructor that initializes objects representing the player, different locations of the game, and the
+     * private fields that will be used to control the flow of the game.
+     */
     public GameManager() {
         this.gameStatus = true;
         this.days = 0;
@@ -38,10 +47,19 @@ public class GameManager {
         this.currentLocation = fl;
     }
 
+    /**
+     * returns status of game, if false then the game is over.
+     * @return boolean returns the status of the game
+     */
     public boolean getGameStatus() {
         return this.gameStatus;
     }
 
+
+    /**
+     * parses the entered text in standard input and does things in the game according to said input
+     * @param text entered input in standard input
+     */
     public void parseText(String text) {
         text = text.strip().toLowerCase();
         Inventory playerInventory = this.p.getPlayerInventory();
@@ -121,6 +139,9 @@ public class GameManager {
 
     }
 
+    /**
+     * method to be run in a loop in the main method of the game.
+     */
     public void run() {
 
             currentLocation.update(this.days);
