@@ -11,10 +11,10 @@ public abstract class Location {
 
     public abstract String getCurrentDialog();
 
-    public String sendTerminate() {
-        return "terminate";
-    }
-
+//    public String sendTerminate() {
+//        return "terminate";
+//    }
+    public abstract void update(int days);
     public abstract ArrayList<Choice> getCurrentChoices();
 
     public Choice getChoiceSelected(String textRep) {
