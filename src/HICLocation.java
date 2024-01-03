@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public class HICLocation extends Location {
+
+    public HICLocation() {
+        this.locationName = "Health Insurance Company";
+    }
     @Override
     public String getCurrentDialog() {
         return null;
@@ -19,6 +23,11 @@ public class HICLocation extends Location {
     @Override
     public ArrayList<Choice> getCurrentChoices() {
         return null;
+    }
+
+    @Override
+    public void getChoices() {
+
     }
     // Health Insurance Company Location
 }

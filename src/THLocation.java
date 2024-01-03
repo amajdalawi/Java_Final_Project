@@ -15,13 +15,12 @@ public class THLocation extends Location{
                 You are now at the Town Hall, what do you want to do?""";
         Choice c1 = new Choice("get ticket", "wait");
         Choice c2 = new Choice("return home", "goToBase");
-        Choice c3 = new Choice("argue", "addToInventory", "Annex 15");
+        Choice c3 = new Choice("argue", "addToInventory", "Annex 100");
         Choice c4 = new Choice("send email", "wait");
         this.currentChoices.add(c1);
         this.currentChoices.add(c2);
         this.currentChoices.add(c3);
         this.currentChoices.add(c4);
-
     }
     @Override
     public String getCurrentDialog() {
@@ -34,16 +33,14 @@ public class THLocation extends Location{
             Choice getAnnexChoice = new Choice("get annex", "addToInventory", "Annex 100");
             this.currentChoices.add(getAnnexChoice);
         }
-    }
 
-    public void removeChoice(Choice c) {
-        for (Choice internalChoice : this.currentChoices) {
-            if (c.textRep.equals(internalChoice.textRep)) {
-                this.currentChoices.remove(internalChoice);
-                break;
-            }
+        if (days - this.daysSinceSendEmail > 4) {
+            Choice getAnnexChoice = new Choice("get annex", "addToInventory", "Annex 100");
+            this.currentChoices.add(getAnnexChoice);
         }
     }
+
+
     @Override
     public void update(Choice choice, int days) {
         if (choice.textRep.equals("get ticket")) {
@@ -53,7 +50,14 @@ public class THLocation extends Location{
 
         }
     }
-
+    public void removeChoice(Choice c) {
+        for (Choice internalChoice : this.currentChoices) {
+            if (c.textRep.equals(internalChoice.textRep)) {
+                this.currentChoices.remove(internalChoice);
+                break;
+            }
+        }
+    }
     @Override
     public ArrayList<Choice> getCurrentChoices() {
         return this.currentChoices;
@@ -72,5 +76,11 @@ public class THLocation extends Location{
         }
         return null;
 
+    }
+
+    public void getChoices() {
+        for (Choice c: this.currentChoices) {
+            System.out.println(c.textRep);
+        }
     }
 }
