@@ -4,7 +4,8 @@ public class THLocation extends Location{
     private ArrayList<Choice> currentChoices;
     String locationName;
     private String currentDialogue;
-    private int daysSince;
+    private int daysSinceSendEmail;
+    private int daysSinceGetTicket;
 
 
     public THLocation() {
@@ -17,6 +18,9 @@ public class THLocation extends Location{
         Choice c3 = new Choice("argue", "addToInventory", "Annex 15");
         Choice c4 = new Choice("send email", "wait");
         this.currentChoices.add(c1);
+        this.currentChoices.add(c2);
+        this.currentChoices.add(c3);
+        this.currentChoices.add(c4);
 
     }
     @Override
@@ -26,12 +30,28 @@ public class THLocation extends Location{
 
     @Override
     public void update(int days) {
-
+        if (days - this.daysSinceGetTicket > 2) {
+            Choice getAnnexChoice = new Choice("get annex", "addToInventory", "Annex 100");
+            this.currentChoices.add(getAnnexChoice);
+        }
     }
 
+    public void removeChoice(Choice c) {
+        for (Choice internalChoice : this.currentChoices) {
+            if (c.textRep.equals(internalChoice.textRep)) {
+                this.currentChoices.remove(internalChoice);
+                break;
+            }
+        }
+    }
     @Override
     public void update(Choice choice, int days) {
+        if (choice.textRep.equals("get ticket")) {
+            this.daysSinceGetTicket = days;
+            this.removeChoice(choice);
 
+
+        }
     }
 
     @Override
@@ -44,4 +64,13 @@ public class THLocation extends Location{
         return this.locationName;
     }
 
+    public Choice getChoiceSelected(String textRep) {
+        for (Choice c: this.getCurrentChoices()){
+            if (c.toString().equals(textRep)) {
+                return c;
+            }
+        }
+        return null;
+
+    }
 }

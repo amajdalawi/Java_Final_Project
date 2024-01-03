@@ -50,6 +50,7 @@ public class GameManager {
         if (choiceSelected.type.equals("addToInventory")) {
             Inventory inv = this.p.getPlayerInventory();
             inv.addToInventory(choiceSelected.item);
+            bl.removeFromChoices(choiceSelected);
             this.currentLocation = bl;
             this.days = this.days + 1;
             return;

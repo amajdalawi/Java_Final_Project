@@ -34,4 +34,13 @@ public abstract class Location {
     public String getLocationName() {
         return this.locationName;
     }
+
+    public void removeFromChoices(Choice c) {
+        for (Choice internalchoice : this.currentChoices) {
+            if (c.textRep.equals(internalchoice.textRep)) {
+                this.currentChoices.remove(internalchoice);
+                break;
+            }
+        }
+    }
 }
