@@ -6,9 +6,18 @@ public class BaseLocation extends Location {
     private ArrayList<Choice> choicesTaken;
 
 
-    public BaseLocation() {
+    public BaseLocation(Location... lcs) {
         currentChoices = new ArrayList<>();
         choicesTaken = new ArrayList<>();
+
+        for (Location l: lcs) {
+            Choice c = new Choice(l.locationName, "goToLocation", l);
+            currentChoices.add(c);
+        }
+
+        this.currentDialogue = """
+                You are now back at your home. Where do you want to go?
+                """;
 //        this.currentDialogue = """
 //                Welcome to Brussels. As an international student, you are required to get your residence
 //                permit in 8 days, and thus must get some items necessary to get your permit, if you fail to

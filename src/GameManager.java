@@ -43,6 +43,8 @@ public class GameManager {
         }
 
         if (choiceSelected.type.equals("goToLocation")) {
+            currentLocation.update(choiceSelected, this.days);
+            this.currentLocation = choiceSelected.location;
 
         }
     }
