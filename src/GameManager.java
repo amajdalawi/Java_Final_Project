@@ -7,6 +7,10 @@ public class GameManager {
     private Player p;
     private Location currentLocation;
     private FirstLocation fl;
+    private UniLocation unil;
+    private HICLocation hicl;
+    private EmbassyLocation el;
+    private THLocation thl;
     private BaseLocation bl;
     private TextPrinter tp;
     public GameManager() {
@@ -24,9 +28,10 @@ public class GameManager {
 
     public void parseText(String text) {
         Choice choiceSelected = currentLocation.getChoiceSelected(text);
-        System.out.println(text);
+        System.out.println("choice selected: " + text);
         if (text.strip().equals("quit")) {
             this.gameStatus = false;
+            return;
         }
 
         if (choiceSelected.type.equals("addToInventory")) {
@@ -34,6 +39,11 @@ public class GameManager {
             inv.addToInventory(choiceSelected.item);
             this.currentLocation = bl;
             this.days = this.days + 1;
+            return;
+        }
+
+        if (choiceSelected.type.equals("goToLocation")) {
+
         }
     }
 

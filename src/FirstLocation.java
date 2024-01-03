@@ -14,7 +14,7 @@ public class FirstLocation extends Location {
                 permit in 8 days, and thus must get some items necessary to get your permit, if you fail to
                 do so, you will lose and get kicked out of the country!
                 Tread wisely!""" ;
-        Choice choice1 = new Choice("proceed", "goToBase",null);
+        Choice choice1 = new Choice("proceed", "goToBase");
         currentChoices.add(choice1);
     }
 
