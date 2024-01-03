@@ -78,9 +78,10 @@ public class THLocation extends Location implements LocationUpdatable{
 
     }
 
+    @Override
     public void getChoices() {
-        for (Choice ch: this.currentChoices) {
-            System.out.println(ch.textRep);
+        for (Choice c: this.getCurrentChoices()) {
+            System.out.println(c.textRep);
         }
     }
 }

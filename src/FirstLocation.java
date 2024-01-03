@@ -51,6 +51,7 @@ public class FirstLocation extends Location {
     }
 
 
+    @Override
     public Choice getChoiceSelected(String textRep) {
         for (Choice c: this.getCurrentChoices()){
             if (c.toString().equals(textRep)) {
@@ -58,7 +59,6 @@ public class FirstLocation extends Location {
             }
         }
         return null;
-
     }
 
     @Override

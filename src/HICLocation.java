@@ -14,10 +14,6 @@ public class HICLocation extends Location  {
 
 
     }
-    @Override
-    public String getCurrentDialog() {
-        return this.currentDialogue;
-    }
 
     @Override
     public void update(int days) {
@@ -31,42 +27,12 @@ public class HICLocation extends Location  {
     public void update(Choice choice, int days) {
         if (choice.textRep.equals("apply for health insurance")) {
             this.daysSinceApplication = days;
-            this.removeChoice(choice);
+            this.removeFromChoices(choice);
             System.out.println("Come back after 2 days!");
 
 
         }
     }
 
-    public void removeChoice(Choice c) {
-        for (Choice internalChoice : this.currentChoices) {
-            if (c.textRep.equals(internalChoice.textRep)) {
-                this.currentChoices.remove(internalChoice);
-                break;
-            }
-        }
-    }
-
-    @Override
-    public ArrayList<Choice> getCurrentChoices() {
-        return this.currentChoices;
-    }
-
-    @Override
-    public void getChoices() {
-        for (Choice c: this.getCurrentChoices()) {
-            System.out.println(c.textRep);
-        }
-    }
-
-    public Choice getChoiceSelected(String textRep) {
-        for (Choice c: this.getCurrentChoices()){
-            if (c.toString().equals(textRep)) {
-                return c;
-            }
-        }
-        return null;
-
-    }
     // Health Insurance Company Location
 }

@@ -26,11 +26,10 @@ public abstract class Location {
     }
 
     public Choice getChoiceSelected(String textRep) {
-        for (Choice c: this.currentChoices) {
+        for (Choice c: this.getCurrentChoices()){
             if (c.toString().equals(textRep)) {
                 return c;
             }
-
         }
         return null;
     }
@@ -49,8 +48,8 @@ public abstract class Location {
     }
 
     public void getChoices() {
-        for (Choice ch: this.currentChoices) {
-            System.out.println(ch.textRep);
+        for (Choice c: this.getCurrentChoices()) {
+            System.out.println(c.textRep);
         }
     }
 }

@@ -16,15 +16,6 @@ public class EmbassyLocation extends  Location {
 
     }
 
-    public String getLocationName() {
-        return this.locationName;
-    }
-
-
-    @Override
-    public String getCurrentDialog() {
-        return this.currentDialogue;
-    }
 
     @Override
     public void update(int days) {
@@ -34,28 +25,6 @@ public class EmbassyLocation extends  Location {
     @Override
     public void update(Choice choice, int days) {
 
-    }
-
-    @Override
-    public ArrayList<Choice> getCurrentChoices() {
-        return this.currentChoices;
-    }
-
-    @Override
-    public void getChoices() {
-        for (Choice c: this.currentChoices) {
-            System.out.println(c.textRep);
-        }
-    }
-
-    public Choice getChoiceSelected(String textRep) {
-        for (Choice c: this.currentChoices) {
-            if (c.toString().equals(textRep)) {
-                return c;
-            }
-
-        }
-        return null;
     }
 
 }

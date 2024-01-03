@@ -44,6 +44,7 @@ public class BaseLocation extends Location {
         return this.currentChoices;
     }
 
+    @Override
     public Choice getChoiceSelected(String textRep) {
         for (Choice c: this.getCurrentChoices()){
             if (c.toString().toLowerCase().equals(textRep)) {
@@ -54,12 +55,13 @@ public class BaseLocation extends Location {
 
     }
 
+    @Override
     public void getChoices() {
         for (Choice c: this.currentChoices) {
             System.out.println(c.textRep);
         }
     }
-
+@Override
     public void removeFromChoices(Choice c) {
         for (Choice internalchoice : this.getCurrentChoices()) {
             if (c.toString().equals(internalchoice.toString())) {
