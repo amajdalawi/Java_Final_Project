@@ -16,4 +16,16 @@ public class TextPrinter {
         return in.nextLine();
     }
 
+    public void printDialogue(Location location) {
+        System.out.println(location.getCurrentDialogue());
+        location.getChoices();
+        System.out.println("help\ninventory\nquit");
+        System.out.print("> ");
+    }
+
+    public String awaitInput() {
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
+    }
+
 }

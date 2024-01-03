@@ -14,7 +14,7 @@ public abstract class Location {
      * get the dialogue of the location
      * @return String the dialogue of the location
      */
-    public String getCurrentDialog() {
+    public String getCurrentDialogue() {
         return this.currentDialogue;
     }
 

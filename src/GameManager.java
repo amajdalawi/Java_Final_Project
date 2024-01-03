@@ -160,12 +160,14 @@ public class GameManager {
 
         int daysLeft = 8 - this.days;
         System.out.println("Days left: " + daysLeft );
-        String textEntered = tp.printDialog(currentLocation.getCurrentDialog());
-        if (textEntered.strip().equals("quit")){
+        tp.printDialogue(currentLocation);
+        String input = tp.awaitInput();
+//        String textEntered = tp.printDialog(currentLocation.getCurrentDialogue());
+        if (input.strip().equals("quit")){
             this.gameStatus = false;
             return;
         }
-        this.parseText(textEntered);
+        this.parseText(input);
     }
 
 

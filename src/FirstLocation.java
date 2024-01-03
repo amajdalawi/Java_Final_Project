@@ -22,7 +22,7 @@ public class FirstLocation extends Location {
     }
 
     @Override
-    public String getCurrentDialog() {
+    public String getCurrentDialogue() {
         return this.currentDialogue;
     }
 

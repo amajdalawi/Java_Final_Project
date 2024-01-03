@@ -26,7 +26,7 @@ public class BaseLocation extends Location {
     }
 
     @Override
-    public String getCurrentDialog() {
+    public String getCurrentDialogue() {
         return this.currentDialogue;
     }
 

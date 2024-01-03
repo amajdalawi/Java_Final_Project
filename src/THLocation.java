@@ -23,7 +23,7 @@ public class THLocation extends Location implements LocationUpdatable{
         this.currentChoices.add(c4);
     }
     @Override
-    public String getCurrentDialog() {
+    public String getCurrentDialogue() {
         return this.currentDialogue;
     }
 
