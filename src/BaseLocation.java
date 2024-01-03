@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class BaseLocation extends Location {
-     String currentDialogue;
-     ArrayList<Choice> currentChoices;
-     ArrayList<Choice> choicesTaken;
+//     String currentDialogue;
+//     ArrayList<Choice> currentChoices;
+//     ArrayList<Choice> choicesTaken;
 
 
     public BaseLocation(ArrayList<Location> lcs) {

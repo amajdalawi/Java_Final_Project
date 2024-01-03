@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Location {
      protected ArrayList<Choice> currentChoices;
-    protected String currentDialog;
+    protected String currentDialogue;
     protected String locationName;
     protected  ArrayList<Choice> choicesTaken;
 
@@ -10,7 +10,9 @@ public abstract class Location {
 
     }
 
-    public abstract String getCurrentDialog();
+    public String getCurrentDialog() {
+        return this.currentDialogue;
+    }
 
 //    public String sendTerminate() {
 //        return "terminate";
@@ -19,7 +21,9 @@ public abstract class Location {
     public abstract void update(int days);
     public abstract void update(Choice choice ,int days);
 
-    public abstract ArrayList<Choice> getCurrentChoices();
+    public ArrayList<Choice> getCurrentChoices() {
+        return this.currentChoices;
+    }
 
     public Choice getChoiceSelected(String textRep) {
         for (Choice c: this.currentChoices) {
@@ -44,5 +48,9 @@ public abstract class Location {
         }
     }
 
-    public abstract void getChoices();
+    public void getChoices() {
+        for (Choice ch: this.currentChoices) {
+            System.out.println(ch.textRep);
+        }
+    }
 }

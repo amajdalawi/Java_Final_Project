@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class EmbassyLocation extends  Location {
-    private ArrayList<Choice> currentChoices;
-    private String currentDialogue;
-    private String locationName;
+//    private ArrayList<Choice> currentChoices;
+//    private String currentDialogue;
+//    private String locationName;
 
     public EmbassyLocation() {
         this.currentChoices = new ArrayList<Choice>();
-        this.currentDialog = "You are now at the Embassy, what are you going to do?";
+        this.currentDialogue = "You are now at the Embassy, what are you going to do?";
         this.locationName = "Embassy";
         Choice c1 = new Choice("return home", "goToBase");
         Choice c2 = new Choice("get birth certificate", "addToInventory", "Birth Certificate");
@@ -23,7 +23,7 @@ public class EmbassyLocation extends  Location {
 
     @Override
     public String getCurrentDialog() {
-        return this.currentDialog;
+        return this.currentDialogue;
     }
 
     @Override

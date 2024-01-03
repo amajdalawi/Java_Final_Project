@@ -5,7 +5,7 @@ public class HICLocation extends Location  {
 
     public HICLocation() {
         this.locationName = "Health Insurance Company";
-        this.currentDialog = "You are now at the Health Insurance Company? What are you going to do?";
+        this.currentDialogue = "You are now at the Health Insurance Company? What are you going to do?";
         this.currentChoices = new ArrayList<Choice>();
         Choice c1 = new Choice("apply for health insurance", "wait");
         Choice c2 = new Choice("return home", "goToBase");
@@ -16,7 +16,7 @@ public class HICLocation extends Location  {
     }
     @Override
     public String getCurrentDialog() {
-        return this.currentDialog;
+        return this.currentDialogue;
     }
 
     @Override
