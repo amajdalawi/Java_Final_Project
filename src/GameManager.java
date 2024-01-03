@@ -12,9 +12,6 @@ public class GameManager {
         this.tp = new TextPrinter();
         FirstLocation fl = new FirstLocation();
         this.currentLocation = fl;
-
-
-
     }
 
     public boolean getGameStatus() {
@@ -22,6 +19,8 @@ public class GameManager {
     }
 
     public void parseText(String text) {
+        Choice choiceSelected = currentLocation.getChoiceSelected(text);
+
         System.out.println(text);
         if (text.strip().equals("quit")) {
             this.gameStatus = false;
@@ -30,6 +29,10 @@ public class GameManager {
 
     public void run() {
         String textEntered = tp.printDialog(currentLocation.getCurrentDialog());
+        if (textEntered.strip().equals("quit")){
+            this.gameStatus = false;
+            return;
+        }
         this.parseText(textEntered);
     }
 

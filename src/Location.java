@@ -17,5 +17,14 @@ public abstract class Location {
 
     public abstract ArrayList<Choice> getCurrentChoices();
 
+    public Choice getChoiceSelected(String textRep) {
+        for (Choice c: this.currentChoices) {
+            if (c.toString().equals(textRep)) {
+                return c;
+            }
+
+        }
+        return null;
+    }
 
 }
