@@ -5,6 +5,7 @@ TODO:
 * Document all methods with Javadoc
 
 URGENT:
-* add "inventory" option to list the items in player's inventory
-* add some options to university and HIC classes
-* add error handling
+- [x] add "inventory" option to list the items in player's inventory
+- [x] add some options to university and HIC classes
+- [x] add error handling 
+
