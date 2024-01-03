@@ -35,7 +35,7 @@ public class GameManager {
 //            System.out.println(l.getLocationName());
 //        }
         this.bl = new BaseLocation(locations);
-        this.currentLocation = bl;
+        this.currentLocation = fl;
     }
 
     public boolean getGameStatus() {
@@ -46,11 +46,11 @@ public class GameManager {
         text = text.strip().toLowerCase();
         Inventory playerInventory = this.p.getPlayerInventory();
 
-        if (playerInventory.checkIfDone()) {
-            this.gameStatus = false;
-            System.out.println("YOU HAVE WON!!!");
-            return;
-        }
+//        if (playerInventory.checkIfDone()) {
+//            this.gameStatus = false;
+//            System.out.println("YOU HAVE WON!!!");
+//            return;
+//        }
 
 
 //        if (!text.equals("help") || !text.equals("inventory") || !text.equals("quit") || !text.equals("quit"))
@@ -124,6 +124,16 @@ public class GameManager {
     public void run() {
 
             currentLocation.update(this.days);
+
+
+        Inventory playerInventory = this.p.getPlayerInventory();
+
+        if (playerInventory.checkIfDone()) {
+            this.gameStatus = false;
+            System.out.println("YOU HAVE WON!!!");
+            return;
+        }
+
 
         int daysLeft = 8 - this.days;
         System.out.println("Days left: " + daysLeft );
