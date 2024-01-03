@@ -33,6 +33,14 @@ public class FirstLocation extends Location {
 
     }
 
+    public void removeChoice(Choice c) {
+        for (Choice internalChoice : this.currentChoices) {
+            if (c.textRep.equals(internalChoice.textRep)) {
+                this.currentChoices.remove(internalChoice);
+                break;
+            }
+        }
+    }
 
     @Override
     public ArrayList<Choice> getCurrentChoices() {
@@ -52,7 +60,9 @@ public class FirstLocation extends Location {
 
     @Override
     public void getChoices() {
-
+        for (Choice c: this.getCurrentChoices()) {
+            System.out.println(c.textRep);
+        }
     }
 
 

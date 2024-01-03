@@ -16,6 +16,7 @@ public class GameManager {
     private TextPrinter tp;
     public GameManager() {
         this.gameStatus = true;
+        this.days = 0;
         this.p = new Player();
         this.tp = new TextPrinter();
         this.fl = new FirstLocation();
@@ -45,12 +46,34 @@ public class GameManager {
         text = text.strip().toLowerCase();
         Inventory playerInventory = this.p.getPlayerInventory();
 
+        if (playerInventory.checkIfDone()) {
+            this.gameStatus = false;
+            System.out.println("YOU HAVE WON!!!");
+            return;
+        }
+
+
+//        if (!text.equals("help") || !text.equals("inventory") || !text.equals("quit") || !text.equals("quit"))
         if (text.equals("help")) {
             currentLocation.getChoices();
             return;
         }
 
+        if (text.equals("inventory")) {
+            Inventory inventory = this.p.getPlayerInventory();
+            inventory.printInventory();
+            return;
+        }
+
+
         Choice choiceSelected = currentLocation.getChoiceSelected(text);
+
+        if (choiceSelected == null) {
+            System.out.println("you have selected an invalid choice, type help to see the list of available chocies.");
+            return;
+        }
+
+
         System.out.println("choice selected: " + text);
         if (text.equals("quit")) {
             this.gameStatus = false;
@@ -59,11 +82,6 @@ public class GameManager {
         }
 
 
-        if (playerInventory.checkIfDone()) {
-            this.gameStatus = false;
-            System.out.println("YOU HAVE WON!!!");
-            return;
-        }
 
         if (this.days - 8 == 0) {
             this.gameStatus = false;
@@ -99,12 +117,14 @@ public class GameManager {
             this.currentLocation = choiceSelected.location;
             System.out.println("you are now at: " + currentLocation.getLocationName());
         }
+
+
     }
 
     public void run() {
-        if (currentLocation instanceof LocationUpdatable) {
+
             currentLocation.update(this.days);
-        }
+
         int daysLeft = 8 - this.days;
         System.out.println("Days left: " + daysLeft );
         String textEntered = tp.printDialog(currentLocation.getCurrentDialog());
