@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public abstract class Location {
-    private ArrayList<Choice> currentChoices;
-    private String currentDialog;
+     ArrayList<Choice> currentChoices;
+     String currentDialog;
     String locationName;
     private ArrayList<Choice> choicesTaken;
 
@@ -31,4 +31,7 @@ public abstract class Location {
         return null;
     }
 
+    public String getLocationName() {
+        return this.locationName;
+    }
 }

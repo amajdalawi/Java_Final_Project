@@ -6,20 +6,28 @@ public class GameManager {
     private boolean gameStatus;
     private Player p;
     private Location currentLocation;
-    private FirstLocation fl;
-    private UniLocation unil;
-    private HICLocation hicl;
-    private EmbassyLocation el;
-    private THLocation thl;
-    private BaseLocation bl;
+     FirstLocation fl;
+     UniLocation unil;
+     HICLocation hicl;
+     EmbassyLocation el;
+     THLocation thl;
+     BaseLocation bl;
     private TextPrinter tp;
     public GameManager() {
         this.gameStatus = true;
         this.p = new Player();
         this.tp = new TextPrinter();
         this.fl = new FirstLocation();
-        this.bl = new BaseLocation();
-        this.currentLocation = fl;
+        this.thl = new THLocation();
+        THLocation testth = new THLocation();
+        ArrayList<Location> locations = new ArrayList<>();
+        locations.add(this.thl);
+//        for (Location l : locations) {
+//            System.out.println(l.getCurrentDialog());
+//            System.out.println(l.getLocationName());
+//        }
+        this.bl = new BaseLocation(locations);
+        this.currentLocation = bl;
     }
 
     public boolean getGameStatus() {
@@ -27,13 +35,17 @@ public class GameManager {
     }
 
     public void parseText(String text) {
-        Choice choiceSelected = currentLocation.getChoiceSelected(text);
+        Choice choiceSelected = currentLocation.getChoiceSelected(text.strip());
         System.out.println("choice selected: " + text);
         if (text.strip().equals("quit")) {
             this.gameStatus = false;
             return;
         }
 
+        if (choiceSelected.type.equals("goToBase")) {
+            this.currentLocation = this.bl;
+            return;
+        }
         if (choiceSelected.type.equals("addToInventory")) {
             Inventory inv = this.p.getPlayerInventory();
             inv.addToInventory(choiceSelected.item);
@@ -45,7 +57,7 @@ public class GameManager {
         if (choiceSelected.type.equals("goToLocation")) {
             currentLocation.update(choiceSelected, this.days);
             this.currentLocation = choiceSelected.location;
-
+            System.out.println("you are now at: " + currentLocation.locationName);
         }
     }
 

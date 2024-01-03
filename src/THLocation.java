@@ -1,9 +1,20 @@
 import java.util.ArrayList;
 
 public class THLocation extends Location{
+    private ArrayList<Choice> currentChoices;
+    String locationName;
+    private String currentDialogue;
+
+
+    public THLocation() {
+        this.locationName = "Town Hall";
+        this.currentDialogue = """
+                You are now at the Town Hall, what do you want to do?""";
+
+    }
     @Override
     public String getCurrentDialog() {
-        return null;
+        return this.currentDialogue;
     }
 
     @Override
@@ -18,9 +29,12 @@ public class THLocation extends Location{
 
     @Override
     public ArrayList<Choice> getCurrentChoices() {
-        return null;
+        return this.currentChoices;
     }
     // Town hall Location
 
+    public String getLocationName() {
+        return this.locationName;
+    }
 
 }

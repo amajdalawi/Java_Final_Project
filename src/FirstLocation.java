@@ -24,20 +24,30 @@ public class FirstLocation extends Location {
     }
 
     @Override
+    public void update(int days) {
+
+    }
+
+    @Override
+    public void update(Choice choice, int days) {
+
+    }
+
+    @Override
     public ArrayList<Choice> getCurrentChoices() {
         return this.currentChoices;
     }
 
 
-//    public Choice getChoiceSelected(String textRep) {
-//        for (Choice c: this.getCurrentChoices()){
-//            if (c.toString().equals(textRep)) {
-//                return c;
-//            }
-//        }
-//        return null;
-//
-//    }
+    public Choice getChoiceSelected(String textRep) {
+        for (Choice c: this.getCurrentChoices()){
+            if (c.toString().equals(textRep)) {
+                return c;
+            }
+        }
+        return null;
+
+    }
 
 
 }

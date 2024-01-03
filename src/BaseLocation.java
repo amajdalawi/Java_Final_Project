@@ -6,30 +6,37 @@ public class BaseLocation extends Location {
     private ArrayList<Choice> choicesTaken;
 
 
-    public BaseLocation(Location... lcs) {
-        currentChoices = new ArrayList<>();
-        choicesTaken = new ArrayList<>();
+    public BaseLocation(ArrayList<Location> lcs) {
+//        System.out.println(lcs.toString());
+//        for (Location l : lcs) {
+//            System.out.println(l.locationName);
+//        }
+        this.currentChoices = new ArrayList<>();
+        this.choicesTaken = new ArrayList<>();
 
         for (Location l: lcs) {
-            Choice c = new Choice(l.locationName, "goToLocation", l);
-            currentChoices.add(c);
+            Choice c = new Choice(l.getLocationName(), "goToLocation", l);
+            this.currentChoices.add(c);
         }
 
         this.currentDialogue = """
                 You are now back at your home. Where do you want to go?
                 """;
-//        this.currentDialogue = """
-//                Welcome to Brussels. As an international student, you are required to get your residence
-//                permit in 8 days, and thus must get some items necessary to get your permit, if you fail to
-//                do so, you will lose and get kicked out of the country!
-//                Tread wisely!""" ;
-//        Choice choice1 = new Choice("proceed", "goToBase",null);
-//        currentChoices.add(choice1);
     }
 
     @Override
     public String getCurrentDialog() {
         return this.currentDialogue;
+    }
+
+    @Override
+    public void update(int days) {
+
+    }
+
+    @Override
+    public void update(Choice choice, int days) {
+
     }
 
     @Override
