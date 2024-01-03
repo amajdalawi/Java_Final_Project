@@ -20,7 +20,6 @@ public class GameManager {
 
     public void parseText(String text) {
         Choice choiceSelected = currentLocation.getChoiceSelected(text);
-
         System.out.println(text);
         if (text.strip().equals("quit")) {
             this.gameStatus = false;
