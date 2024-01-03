@@ -35,6 +35,7 @@ public class GameManager {
     }
 
     public void parseText(String text) {
+        text = text.strip();
         Choice choiceSelected = currentLocation.getChoiceSelected(text.strip());
         System.out.println("choice selected: " + text);
         if (text.strip().equals("quit")) {

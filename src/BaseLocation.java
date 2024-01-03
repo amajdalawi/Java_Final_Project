@@ -17,6 +17,7 @@ public class BaseLocation extends Location {
         for (Location l: lcs) {
             Choice c = new Choice(l.getLocationName(), "goToLocation", l);
             this.currentChoices.add(c);
+
         }
 
         this.currentDialogue = """
@@ -42,6 +43,16 @@ public class BaseLocation extends Location {
     @Override
     public ArrayList<Choice> getCurrentChoices() {
         return this.currentChoices;
+    }
+
+    public Choice getChoiceSelected(String textRep) {
+        for (Choice c: this.getCurrentChoices()){
+            if (c.toString().equals(textRep)) {
+                return c;
+            }
+        }
+        return null;
+
     }
 
 }

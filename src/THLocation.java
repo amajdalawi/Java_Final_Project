@@ -7,9 +7,12 @@ public class THLocation extends Location{
 
 
     public THLocation() {
+        this.currentChoices = new ArrayList<>();
         this.locationName = "Town Hall";
         this.currentDialogue = """
                 You are now at the Town Hall, what do you want to do?""";
+        Choice c1 = new Choice("get ticket", "wait");
+        this.currentChoices.add(c1);
 
     }
     @Override
