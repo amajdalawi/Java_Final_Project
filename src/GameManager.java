@@ -3,6 +3,8 @@ import java.util.ArrayList;
 /**
  * Class that controls the game and holds within its lifetime/scope all the
  * locations, player and choices that define the game.
+ *
+ * @author Abdulrahman Almajdalawi
  */
 public class GameManager {
     private int days;
