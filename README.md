@@ -1,8 +1,10 @@
 # Java_Final_Project
 
 TODO:
-* Exchange enum with the textrep field in Choice
-* Document all methods with Javadoc
+- [ ] Document most important methods with Javadoc
+- [ ] add printChoices before the cursor of the input
+- [ ] 
+
 
 URGENT:
 - [x] add "inventory" option to list the items in player's inventory
