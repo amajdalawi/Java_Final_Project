@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class BaseLocation extends Location {
-    private String currentDialogue;
-    private ArrayList<Choice> currentChoices;
-    private ArrayList<Choice> choicesTaken;
+     String currentDialogue;
+     ArrayList<Choice> currentChoices;
+     ArrayList<Choice> choicesTaken;
 
 
     public BaseLocation(ArrayList<Location> lcs) {
@@ -30,12 +30,11 @@ public class BaseLocation extends Location {
         return this.currentDialogue;
     }
 
-    @Override
+
     public void update(int days) {
 
     }
 
-    @Override
     public void update(Choice choice, int days) {
 
     }
@@ -58,6 +57,15 @@ public class BaseLocation extends Location {
     public void getChoices() {
         for (Choice c: this.currentChoices) {
             System.out.println(c.textRep);
+        }
+    }
+
+    public void removeFromChoices(Choice c) {
+        for (Choice internalchoice : this.getCurrentChoices()) {
+            if (c.toString().equals(internalchoice.toString())) {
+                this.currentChoices.remove(internalchoice);
+                break;
+            }
         }
     }
 

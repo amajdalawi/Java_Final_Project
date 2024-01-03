@@ -87,7 +87,8 @@ public class GameManager {
         if (choiceSelected.type.equals("addToInventory")) {
             Inventory inv = this.p.getPlayerInventory();
             inv.addToInventory(choiceSelected.item);
-            bl.removeFromChoices(choiceSelected);
+            Choice currentLocationChoice = this.bl.getChoiceSelected(currentLocation.getLocationName().strip().toLowerCase());
+            bl.removeFromChoices(currentLocationChoice);
             this.currentLocation = bl;
             this.days = this.days + 1;
             return;
@@ -96,12 +97,14 @@ public class GameManager {
         if (choiceSelected.type.equals("goToLocation")) {
 //            currentLocation.update(choiceSelected, this.days);
             this.currentLocation = choiceSelected.location;
-            System.out.println("you are now at: " + currentLocation.locationName);
+            System.out.println("you are now at: " + currentLocation.getLocationName());
         }
     }
 
     public void run() {
-        currentLocation.update(this.days);
+        if (currentLocation instanceof LocationUpdatable) {
+            currentLocation.update(this.days);
+        }
         int daysLeft = 8 - this.days;
         System.out.println("Days left: " + daysLeft );
         String textEntered = tp.printDialog(currentLocation.getCurrentDialog());

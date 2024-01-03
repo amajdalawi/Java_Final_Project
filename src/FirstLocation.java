@@ -33,6 +33,7 @@ public class FirstLocation extends Location {
 
     }
 
+
     @Override
     public ArrayList<Choice> getCurrentChoices() {
         return this.currentChoices;

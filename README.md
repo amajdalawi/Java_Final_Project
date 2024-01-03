@@ -5,6 +5,6 @@ TODO:
 * Document all methods with Javadoc
 
 URGENT:
-* add "inventory" option to list of choices that can be made
-* add some options to university, HIC and embassy classes
+* add "inventory" option to list the items in player's inventory
+* add some options to university and HIC classes
 * add error handling

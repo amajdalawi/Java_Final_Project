@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class THLocation extends Location{
+public class THLocation extends Location implements LocationUpdatable{
     private ArrayList<Choice> currentChoices;
     String locationName;
     private String currentDialogue;

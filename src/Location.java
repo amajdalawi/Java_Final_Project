@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public abstract class Location {
-     ArrayList<Choice> currentChoices;
-     String currentDialog;
-    String locationName;
-    private ArrayList<Choice> choicesTaken;
+     protected ArrayList<Choice> currentChoices;
+    protected String currentDialog;
+    protected String locationName;
+    protected  ArrayList<Choice> choicesTaken;
 
     public Location () {
 
