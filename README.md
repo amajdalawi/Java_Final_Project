@@ -1,9 +1,9 @@
 # Java_Final_Project
 
 TODO:
-- [ ] Document most important methods with Javadoc
-- [ ] add printChoices before the cursor of the input
-- [ ] 
+- [x] Document most important methods with Javadoc
+- [x] add printChoices before the cursor of the input
+ 
 
 
 URGENT:
