@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Class representing the location of the university
+ */
 public class UniLocation extends  Location {
 
     public UniLocation() {
