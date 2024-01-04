@@ -117,7 +117,9 @@ public class GameManager {
         }
 
         if (choiceSelected.getTypeOfAction() == Action.Wait) {
-            currentLocation.update(choiceSelected, this.days);
+            if (currentLocation instanceof LocationUpdatable) {
+                ((LocationUpdatable)  currentLocation).update(choiceSelected, this.days);
+            }
             this.currentLocation = this.bl;
             this.days = this.days + 1;
             return;
@@ -146,9 +148,9 @@ public class GameManager {
      * method to be run in a loop in the main method of the game.
      */
     public void run() {
-
-            currentLocation.update(this.days);
-
+        if (currentLocation instanceof LocationUpdatable) {
+            ((LocationUpdatable)  currentLocation).update(this.days);
+        }
 
         Inventory playerInventory = this.p.getPlayerInventory();
 

@@ -22,8 +22,6 @@ public abstract class Location {
 //        return "terminate";
 //    }
 
-    public abstract void update(int days);
-    public abstract void update(Choice choice ,int days);
 
     /**
      * return the currentChoices arraylist defined in the constructor of each Location

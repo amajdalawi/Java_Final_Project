@@ -20,14 +20,6 @@ public class EmbassyLocation extends  Location {
     }
 
 
-    @Override
-    public void update(int days) {
 
-    }
-
-    @Override
-    public void update(Choice choice, int days) {
-
-    }
 
 }

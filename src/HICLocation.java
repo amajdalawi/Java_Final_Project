@@ -28,6 +28,11 @@ public class HICLocation extends Location implements LocationUpdatable {
     @Override
     public void update(int days) {
         if (days - this.daysSinceApplication > 2 && this.Applied) {
+            for (Choice c : this.getCurrentChoices()) {
+                if (c.textRep.equals("get health certificate")) {
+                    return;
+                }
+            }
             Choice getAnnexChoice = new Choice("get health certificate", Action.AddToInventory, "Health Insurance");
             this.currentChoices.add(getAnnexChoice);
         }

@@ -21,14 +21,6 @@ public class FirstLocation extends Location {
         currentChoices.add(choice1);
     }
 
-    @Override
-    public void update(int days) {
 
-    }
-
-    @Override
-    public void update(Choice choice, int days) {
-
-    }
 
 }
