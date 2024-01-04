@@ -28,6 +28,7 @@ public class GameManager {
     public GameManager() {
         this.gameStatus = true;
         this.days = 0;
+        // initializing player, locations and TextPrinter variables to be added
         this.p = new Player();
         this.tp = new TextPrinter();
         this.fl = new FirstLocation();
@@ -105,7 +106,7 @@ public class GameManager {
 
         if (this.days - 8 == 0) {
             this.gameStatus = false;
-            System.out.println("YOU HAVE FAILED!");
+            System.out.println("8 DAYS HAVE PASSED! YOU HAVE FAILED!");
             return;
         }
 

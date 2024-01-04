@@ -1,7 +1,12 @@
 import java.util.ArrayList;
 
+/**
+ * Class representing the health insurance company
+ */
 public class HICLocation extends Location implements LocationUpdatable {
-    int daysSinceApplication;
+    // Internal variable to check the days since the player applied for health insurance
+    private int daysSinceApplication;
+    // boolean variable to track whether the player applied for a health insurance or not
     private boolean Applied = false;
 
     public HICLocation() {
