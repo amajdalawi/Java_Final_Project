@@ -25,11 +25,6 @@ public class BaseLocation extends Location {
                 """;
     }
 
-    @Override
-    public String getCurrentDialogue() {
-        return this.currentDialogue;
-    }
-
 
     public void update(int days) {
 
@@ -37,11 +32,6 @@ public class BaseLocation extends Location {
 
     public void update(Choice choice, int days) {
 
-    }
-
-    @Override
-    public ArrayList<Choice> getCurrentChoices() {
-        return this.currentChoices;
     }
 
     @Override
@@ -59,15 +49,6 @@ public class BaseLocation extends Location {
     public void getChoices() {
         for (Choice c: this.currentChoices) {
             System.out.println(c.textRep);
-        }
-    }
-@Override
-    public void removeFromChoices(Choice c) {
-        for (Choice internalchoice : this.getCurrentChoices()) {
-            if (c.toString().equals(internalchoice.toString())) {
-                this.currentChoices.remove(internalchoice);
-                break;
-            }
         }
     }
 
