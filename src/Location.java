@@ -70,7 +70,6 @@ public abstract class Location {
 
     /**
      * print all the choices available in a certain location.
-     *
      */
     public void getChoices() {
         for (Choice c: this.getCurrentChoices()) {

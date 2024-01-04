@@ -4,9 +4,6 @@ import java.util.ArrayList;
  * Class of type Location representing the first location the player will be in
  */
 public class FirstLocation extends Location {
-    private String currentDialogue;
-    private ArrayList<Choice> currentChoices;
-    private ArrayList<Choice> choicesTaken;
 
 
     public FirstLocation() {
@@ -25,11 +22,6 @@ public class FirstLocation extends Location {
     }
 
     @Override
-    public String getCurrentDialogue() {
-        return this.currentDialogue;
-    }
-
-    @Override
     public void update(int days) {
 
     }
@@ -38,39 +30,5 @@ public class FirstLocation extends Location {
     public void update(Choice choice, int days) {
 
     }
-
-    @Override
-    public void removeFromChoices(Choice c) {
-        for (Choice internalChoice : this.currentChoices) {
-            if (c.textRep.equals(internalChoice.textRep)) {
-                this.currentChoices.remove(internalChoice);
-                break;
-            }
-        }
-    }
-
-    @Override
-    public ArrayList<Choice> getCurrentChoices() {
-        return this.currentChoices;
-    }
-
-
-    @Override
-    public Choice getChoiceSelected(String textRep) {
-        for (Choice c: this.getCurrentChoices()){
-            if (c.toString().equals(textRep)) {
-                return c;
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public void getChoices() {
-        for (Choice c: this.getCurrentChoices()) {
-            System.out.println(c.textRep);
-        }
-    }
-
 
 }

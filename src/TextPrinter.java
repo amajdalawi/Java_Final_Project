@@ -16,6 +16,10 @@ public class TextPrinter {
         return in.nextLine();
     }
 
+    /**
+     * prints dialogue to screen
+     * @param location - location class that has the dialogue method
+     */
     public void printDialogue(Location location) {
         System.out.println(location.getCurrentDialogue());
         location.getChoices();
@@ -23,6 +27,10 @@ public class TextPrinter {
         System.out.print("> ");
     }
 
+    /**
+     * Awaits input from the user
+     * @return String  - The entered string from standard input
+     */
     public String awaitInput() {
         Scanner in = new Scanner(System.in);
         return in.nextLine();
