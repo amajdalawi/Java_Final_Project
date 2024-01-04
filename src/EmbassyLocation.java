@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Class representing the location of the embassy
+ */
 public class EmbassyLocation extends  Location {
 //    private ArrayList<Choice> currentChoices;
 //    private String currentDialogue;

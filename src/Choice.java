@@ -1,5 +1,5 @@
 /**
- * <h1>Choice Class</h1>
+ * Choice Class
  * The choice class represents a choice that can be mapped to a specific
  * input when enetered into standard input.
  *
@@ -15,9 +15,9 @@ public class Choice {
 
     /**
      * Constructs a choice that can add an item to inventory
-     * @param textRep
-     * @param type
-     * @param item
+     * @param textRep - the text that's going to appear on the choices list
+     * @param type - type of action the choice is going to represent
+     * @param item - item to be added
      */
     public Choice(String textRep,Action type, String item) {
         this.item = item;
@@ -27,8 +27,8 @@ public class Choice {
 
     /**
      * Constructs a choice that does a neutral action (doesn't add to inventory and doesn't go to locatino)
-     * @param textRep
-     * @param type
+     * @param textRep - the text that's going to appear on the choices list
+     * @param type - type of action the choice is going to represent
      */
     public Choice (String textRep, Action type) {
         this.textRep = textRep;
@@ -38,9 +38,9 @@ public class Choice {
     /**
      * Constructs a choice that allows the currentLocation to change to a certain location
      *
-     * @param textRep
-     * @param type
-     * @param l
+     * @param textRep - the text that's going to appear on the choices list
+     * @param type - type of action the choice is going to represent
+     * @param l - location that will change after the player's choice
      */
     public Choice (String textRep, Action type, Location l) {
         this.textRep = textRep;
@@ -56,6 +56,10 @@ public class Choice {
         return this.textRep;
     }
 
+    /**
+     *
+     * @return Action - returns action type of the choice
+     */
     public Action getTypeOfAction() {
         return this.typeOfAction;
     }

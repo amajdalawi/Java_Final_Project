@@ -1,11 +1,17 @@
 import java.util.ArrayList;
 
+/**
+ * A class representing the home location
+ */
 public class BaseLocation extends Location {
 //     String currentDialogue;
 //     ArrayList<Choice> currentChoices;
 //     ArrayList<Choice> choicesTaken;
 
-
+    /**
+     * The constructor of the Base Location
+     * @param lcs - An arraylist of all the locations one can go to from the base location
+     */
     public BaseLocation(ArrayList<Location> lcs) {
 //        System.out.println(lcs.toString());
 //        for (Location l : lcs) {

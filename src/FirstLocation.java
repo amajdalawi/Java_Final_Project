@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Class of type Location representing the first location the player will be in
+ */
 public class FirstLocation extends Location {
     private String currentDialogue;
     private ArrayList<Choice> currentChoices;
@@ -36,7 +39,8 @@ public class FirstLocation extends Location {
 
     }
 
-    public void removeChoice(Choice c) {
+    @Override
+    public void removeFromChoices(Choice c) {
         for (Choice internalChoice : this.currentChoices) {
             if (c.textRep.equals(internalChoice.textRep)) {
                 this.currentChoices.remove(internalChoice);
