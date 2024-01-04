@@ -6,8 +6,8 @@ public class UniLocation extends  Location {
         this.locationName = "University";
         this.currentChoices = new ArrayList<Choice>();
         this.currentDialogue = "You are now at the University, what are you going to do?";
-        Choice c1 = new Choice("return home", "goToBase");
-        Choice c2 = new Choice("get registration certificate", "addToInventory", "Registration Certificate");
+        Choice c1 = new Choice("return home", Action.GoToBase);
+        Choice c2 = new Choice("get registration certificate", Action.AddToInventory, "Registration Certificate");
         this.currentChoices.add(c1);
         this.currentChoices.add(c2);
 

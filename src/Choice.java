@@ -8,6 +8,7 @@
  */
 public class Choice {
     String type;
+    Action typeOfAction;
     Location location = null;
     String item = null;
     String textRep;
@@ -18,10 +19,10 @@ public class Choice {
      * @param type
      * @param item
      */
-    public Choice(String textRep,String type, String item) {
+    public Choice(String textRep,Action type, String item) {
         this.item = item;
         this.textRep = textRep;
-        this.type = type;
+        this.typeOfAction = type;
     }
 
     /**
@@ -29,9 +30,9 @@ public class Choice {
      * @param textRep
      * @param type
      */
-    public Choice (String textRep, String type) {
+    public Choice (String textRep, Action type) {
         this.textRep = textRep;
-        this.type = type;
+        this.typeOfAction = type;
     }
 
     /**
@@ -41,9 +42,9 @@ public class Choice {
      * @param type
      * @param l
      */
-    public Choice (String textRep, String type, Location l) {
+    public Choice (String textRep, Action type, Location l) {
         this.textRep = textRep;
-        this.type = type;
+        this.typeOfAction = type;
         this.location = l;
     }
 
@@ -53,6 +54,10 @@ public class Choice {
      */
     public String toString() {
         return this.textRep;
+    }
+
+    public Action getTypeOfAction() {
+        return this.typeOfAction;
     }
 
 }

@@ -17,7 +17,7 @@ public class FirstLocation extends Location {
                 To display items in inventory, type inventory.
                 To quit the game, type quit.
                 Tread wisely!""" ;
-        Choice choice1 = new Choice("proceed", "goToBase");
+        Choice choice1 = new Choice("proceed", Action.GoToBase);
         currentChoices.add(choice1);
     }
 

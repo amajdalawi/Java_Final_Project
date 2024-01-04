@@ -15,7 +15,7 @@ public class BaseLocation extends Location {
         this.choicesTaken = new ArrayList<>();
 
         for (Location l: lcs) {
-            Choice c = new Choice(l.getLocationName(), "goToLocation", l);
+            Choice c = new Choice(l.getLocationName(), Action.GoToLocation, l);
             this.currentChoices.add(c);
 
         }

@@ -109,20 +109,20 @@ public class GameManager {
             return;
         }
 
-        if (choiceSelected.type.equals("goToBase")) {
+        if (choiceSelected.getTypeOfAction() == Action.GoToBase) {
             this.currentLocation = this.bl;
             this.days = this.days + 1;
             return;
         }
 
-        if (choiceSelected.type.equals("wait")) {
+        if (choiceSelected.getTypeOfAction() == Action.Wait) {
             currentLocation.update(choiceSelected, this.days);
             this.currentLocation = this.bl;
             this.days = this.days + 1;
             return;
         }
 
-        if (choiceSelected.type.equals("addToInventory")) {
+        if (choiceSelected.getTypeOfAction() == Action.AddToInventory) {
             Inventory inv = this.p.getPlayerInventory();
             inv.addToInventory(choiceSelected.item);
             Choice currentLocationChoice = this.bl.getChoiceSelected(currentLocation.getLocationName().strip().toLowerCase());
@@ -132,7 +132,7 @@ public class GameManager {
             return;
         }
 
-        if (choiceSelected.type.equals("goToLocation")) {
+        if (choiceSelected.getTypeOfAction() == Action.GoToLocation) {
 //            currentLocation.update(choiceSelected, this.days);
             this.currentLocation = choiceSelected.location;
             System.out.println("you are now at: " + currentLocation.getLocationName());

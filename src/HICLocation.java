@@ -7,8 +7,8 @@ public class HICLocation extends Location  {
         this.locationName = "Health Insurance Company";
         this.currentDialogue = "You are now at the Health Insurance Company? What are you going to do?";
         this.currentChoices = new ArrayList<Choice>();
-        Choice c1 = new Choice("apply for health insurance", "wait");
-        Choice c2 = new Choice("return home", "goToBase");
+        Choice c1 = new Choice("apply for health insurance", Action.Wait);
+        Choice c2 = new Choice("return home", Action.GoToBase);
         currentChoices.add(c1);
         currentChoices.add(c2);
 
@@ -18,7 +18,7 @@ public class HICLocation extends Location  {
     @Override
     public void update(int days) {
         if (days - this.daysSinceApplication > 2) {
-            Choice getAnnexChoice = new Choice("get health certificate", "addToInventory", "Health Insurance");
+            Choice getAnnexChoice = new Choice("get health certificate", Action.AddToInventory, "Health Insurance");
             this.currentChoices.add(getAnnexChoice);
         }
     }

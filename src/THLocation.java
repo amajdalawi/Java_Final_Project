@@ -13,10 +13,10 @@ public class THLocation extends Location implements LocationUpdatable{
         this.locationName = "Town Hall";
         this.currentDialogue = """
                 You are now at the Town Hall, what do you want to do?""";
-        Choice c1 = new Choice("get ticket", "wait");
-        Choice c2 = new Choice("return home", "goToBase");
-        Choice c3 = new Choice("argue", "addToInventory", "Annex 100");
-        Choice c4 = new Choice("send email", "wait");
+        Choice c1 = new Choice("get ticket", Action.Wait);
+        Choice c2 = new Choice("return home", Action.GoToBase);
+        Choice c3 = new Choice("argue", Action.AddToInventory, "Annex 100");
+        Choice c4 = new Choice("send email", Action.Wait);
         this.currentChoices.add(c1);
         this.currentChoices.add(c2);
         this.currentChoices.add(c3);
@@ -30,12 +30,12 @@ public class THLocation extends Location implements LocationUpdatable{
     @Override
     public void update(int days) {
         if (days - this.daysSinceGetTicket > 2) {
-            Choice getAnnexChoice = new Choice("get annex", "addToInventory", "Annex 100");
+            Choice getAnnexChoice = new Choice("get annex", Action.AddToInventory, "Annex 100");
             this.currentChoices.add(getAnnexChoice);
         }
 
         if (days - this.daysSinceSendEmail > 4) {
-            Choice getAnnexChoice = new Choice("get annex", "addToInventory", "Annex 100");
+            Choice getAnnexChoice = new Choice("get annex", Action.AddToInventory, "Annex 100");
             this.currentChoices.add(getAnnexChoice);
         }
     }
