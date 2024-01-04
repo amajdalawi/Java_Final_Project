@@ -1,0 +1,72 @@
+# Game logo
+
+game_logo=__________                         .__   __                               
+\______   \  ____ _______   _____  |__|_/  |_                             
+ |     ___/_/ __ \\_  __ \ /     \ |  |\   __\                            
+ |    |    \  ___/ |  | \/|  Y Y  \|  | |  |                              
+ |____|     \___  >|__|   |__|_|  /|__| |__|                              
+                \/              \/                                        
+                                                                          
+                                ________                            __    
+                                \_____  \   __ __   ____    _______/  |_  
+                                 /  / \  \ |  |  \_/ __ \  /  ___/\   __\ 
+                                /   \_/.  \|  |  /\  ___/  \___ \  |  |   
+                                \_____\ \_/|____/  \___  >/____  > |__|   
+                                       \__>            \/      \/         
+
+# Game intro
+
+game_intro=, fearless adventurer, congrats on receiving your studies letter of acceptance.\nOops! I mean your conditional letter of accepantance for your future studies and the beginning\nto the Belgian bonanza! Time to dust off your shoes, grab your passport, pack that umbrella\n(we love animals so don't be surprised when it rains dogs and cats), and brace yourself for a\njourney filled with delicious chocolates, more languages than you'd expect, and more castles \nthan you can count. Fear not! Once you get your student permit, you'll finally be able to\ncatch your breath and fully savor what this beautiful country has to offer. After all,\ngreat things ain't easy, right?\n
+
+# Player
+
+player_name=Jimmy
+player_health=100
+player_days_left=16
+
+# Locations
+location1_name=City Hall
+location1_intro=Welcome to your local Gemeente! 
+location1_choice1=Check status
+location1_choice2=Ask about next step.
+location1_action1=Test action 1
+location1_action2=Test action 2
+location1_dialog1=Please finish your enrolment before continuing with your residence permit application.
+location1_dialog2=Congratulations in your enrolment, let's do some paperwork and give  you your Annex 15!
+
+location2_name=Immigration Office
+location2_choice1=Submit Required Documents
+location2_choice2=Ask for Information
+location2_action1=Submit your passport, acceptance letter, and other required documents at the counter.
+location2_action2=Speak to the immigration officer for information on the permit process.
+
+location3_name=University Campus
+location3_choice1=Attend Orientation
+location3_choice2=Sleep at dorm
+location3_action1=Attend the orientation session to learn more about your academic program.
+location3_action2=You wait for the police to verify your residence and go to sleep at the end of day. Days left reduced by one.
+
+# Items
+item1_name=Passport
+item1_description=Your passport containing your personal information and visa stamp.
+
+item2_name=Acceptance Letter
+item2_description=An official letter from the university confirming your acceptance into the program.
+
+item3_name=Map
+item3_description=A map of the city to help you navigate the streets.
+
+# Additional Locations and Items can be added as needed.
+# Items
+
+item1_name=Passport
+item1_effect=healing
+item1_value=25
+
+item2_name=Wallet
+item2_effect=mana_restore
+item2_value=20
+
+item2_name=Wallet
+item2_effect=mana_restore
+item2_value=20
