@@ -162,7 +162,7 @@ public class GameManager {
         System.out.println("Days left: " + daysLeft );
         tp.printDialogue(currentLocation);
         String input = tp.awaitInput();
-//        String textEntered = tp.printDialog(currentLocation.getCurrentDialogue());
+
         if (input.strip().equals("quit")){
             this.gameStatus = false;
             return;
