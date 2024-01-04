@@ -1,11 +1,15 @@
 import java.util.ArrayList;
 
+/**
+ * Class representing town hall location
+ */
 public class THLocation extends Location implements LocationUpdatable{
-    private ArrayList<Choice> currentChoices;
-    String locationName;
-    private String currentDialogue;
     private int daysSinceSendEmail;
     private int daysSinceGetTicket;
+    // A boolean variable to check whether the player sent email or not
+    private boolean EmailSent = false;
+    // A boolean variable to check whether the player got a ticket or not
+    private boolean TicketTaken = false;
 
 
     public THLocation() {
@@ -22,66 +26,47 @@ public class THLocation extends Location implements LocationUpdatable{
         this.currentChoices.add(c3);
         this.currentChoices.add(c4);
     }
-    @Override
-    public String getCurrentDialogue() {
-        return this.currentDialogue;
-    }
 
+    /**
+     * checks to see how many days has passed since the start of the game and compares it to the internal days variables set in the class
+     * @param days - days passed since the start of the game
+     */
     @Override
     public void update(int days) {
-        if (days - this.daysSinceGetTicket > 2) {
+        if (days - this.daysSinceGetTicket > 2 && this.TicketTaken) {
             Choice getAnnexChoice = new Choice("get annex", Action.AddToInventory, "Annex 100");
             this.currentChoices.add(getAnnexChoice);
         }
 
-        if (days - this.daysSinceSendEmail > 4) {
+        if (days - this.daysSinceSendEmail > 4 && this.EmailSent) {
             Choice getAnnexChoice = new Choice("get annex", Action.AddToInventory, "Annex 100");
             this.currentChoices.add(getAnnexChoice);
         }
     }
 
 
+    /**
+     * Sets the days internal variable and removes the selected choice
+     * @param choice - choice instance to check against
+     * @param days - days passed since start of game
+     */
     @Override
     public void update(Choice choice, int days) {
         if (choice.textRep.equals("get ticket")) {
             this.daysSinceGetTicket = days;
-            this.removeChoice(choice);
+            this.removeFromChoices(choice);
+            this.TicketTaken = true;
+        }
 
-
+        if (choice.textRep.equals("send email")) {
+            this.daysSinceSendEmail = days;
+            this.removeFromChoices(choice);
+            this.EmailSent = true;
         }
     }
-    public void removeChoice(Choice c) {
-        for (Choice internalChoice : this.currentChoices) {
-            if (c.textRep.equals(internalChoice.textRep)) {
-                this.currentChoices.remove(internalChoice);
-                break;
-            }
-        }
-    }
-    @Override
-    public ArrayList<Choice> getCurrentChoices() {
-        return this.currentChoices;
-    }
+
     // Town hall Location
 
-    public String getLocationName() {
-        return this.locationName;
-    }
 
-    public Choice getChoiceSelected(String textRep) {
-        for (Choice c: this.getCurrentChoices()){
-            if (c.toString().equals(textRep)) {
-                return c;
-            }
-        }
-        return null;
 
-    }
-
-    @Override
-    public void getChoices() {
-        for (Choice c: this.getCurrentChoices()) {
-            System.out.println(c.textRep);
-        }
-    }
 }
